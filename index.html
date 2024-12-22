@@ -1,76 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-step Registration Form</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Multi-Step Form</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="form-container">
-        <form id="multistep-form">
-            <!-- Step 1 -->
-             <div class="form-step active">
-                <h2>Step 1: Personal Information.</h2>
-                <div class="form-group">
-                    <label for="fname">First Name: </label>
-                    <input type="text" id="fname" name="fname" placeholder="Your first name..." required>
-                </div>
-                <div class="form-group">
-                    <label for="midname">Middle Name: </label>
-                    <input type="text" id="midname" name="midname" placeholder="Your middle name..." required>
-                </div>
-                <div class="form-group">
-                    <label for="lname">Last Name: </label>
-                    <input type="text" id="lname" name="lname" placeholder="Your last name..." required>
-                </div>
-                <div class="next-btn">
-                    <button type="button" onclick="nextStep()">Next</button>
-                </div>
-             </div>
-
-             <!-- Step 2 -->
-              <div class="form-step">
-                <h2>Step 2: Contact Information.</h2>
-                <div class="form-group">
-                    <label for="email">Email Address: </label>
-                    <input type="email" id="email" name="email" placeholder="Your email address..." required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number: </label>
-                    <input type="tel" id="phone" name="phone" placeholder="Your phone number..." required>
-              </div>
-              <div class="prev-btn">
-                <button type="button" onclick="previousStep()">Previous</button>
-              </div>
-              <div class="next-btn">
-                <button type="button" onclick="nextStep()">Next</button>
-              </div>
-
-              <!-- Step 3 -->
-               <div class="form-step">
-                <h2>Step 3: Account Details.</h2>
-                <div class="form-group">
-                    <label for="username">Username: </label>
-                    <input type="text" id="username" name="username" placeholder="Your username..." required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password: </label>
-                    <input type="password" id="password" name="password" placeholder="Your password..." required>
-                </div>
-                <div class="form-group">
-                    <label for="confirm-password">Confirm Password: </label>
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password..." required>
-                </div>
-                <div class="prev-btn">
-                    <button type="button" onclick="previousStep()">Previous</button>
-                </div>
-                <div class="submit-btn">
-                    <button type="submit">Submit</button>
-                </div>
-               </div>
-        </form>
+  <div class="form-container">
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+      <div class="step-indicator active">1</div>
+      <div class="step-indicator">2</div>
+      <div class="step-indicator">3</div>
     </div>
-    <script src="script.js"></script>
+    <form id="multiStepForm">
+      <!-- Step 1 -->
+      <div class="form-step active">
+        <h2>Step 1: Personal Information</h2>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="form-step">
+        <h2>Step 2: Contact Information</h2>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required>
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="form-step">
+        <h2>Step 3: Account Details</h2>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
